@@ -90,9 +90,33 @@ def main() -> int:
         else:
             # Create config with CLI args and default agents
             default_agents = [
-                AgentConfig(role="Longsight", species="Vyr'khai"),
-                AgentConfig(role="Lifebinder", species="Lumenari"),
-                AgentConfig(role="Specter", species="Zephryl"),
+                AgentConfig(
+                    role="Longsight",
+                    species="Vyr'khai",
+                    base_strength=70,
+                    base_empathy=50,
+                    base_intelligence=90,
+                    base_mobility=80,
+                    base_tactical=75
+                ),
+                AgentConfig(
+                    role="Lifebinder",
+                    species="Lumenari",
+                    base_strength=50,
+                    base_empathy=95,
+                    base_intelligence=80,
+                    base_mobility=60,
+                    base_tactical=65
+                ),
+                AgentConfig(
+                    role="Specter",
+                    species="Zephryl",
+                    base_strength=85,
+                    base_empathy=45,
+                    base_intelligence=70,
+                    base_mobility=90,
+                    base_tactical=80
+                ),
             ]
             config = SimulationConfig(
                 agents=default_agents,
