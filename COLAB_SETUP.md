@@ -28,7 +28,7 @@ Create a new Colab notebook and run:
 
 # Step 2: Upgrade NumPy and auto-restart runtime
 # Colab has older NumPy by default; this fixes conflicts with jax, opencv, pytensor, thinc
-!pip install --upgrade "numpy>=2.0.0,<2.3.0" -q
+!pip install --upgrade "numpy>=2.0.0,<2.1.0" -q
 
 # The notebook will automatically restart the runtime
 # (This prevents NumPy binary incompatibility errors)
@@ -225,8 +225,8 @@ If you see `ValueError: numpy.dtype size changed, may indicate binary incompatib
 ### NumPy Dependency Conflicts
 If you see warnings about numpy version conflicts with opencv, jax, pytensor, or thinc:
 ```python
-# Upgrade to NumPy 2.x (compatible with opencv, tensorflow, numba, cupy)
-!pip install --upgrade "numpy>=2.0.0,<2.3.0"
+# Upgrade to NumPy 2.0.x (compatible with all Colab packages)
+!pip install --upgrade "numpy>=2.0.0,<2.1.0"
 
 # Verify no conflicts remain
 !pip check

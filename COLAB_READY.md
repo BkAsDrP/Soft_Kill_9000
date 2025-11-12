@@ -17,7 +17,7 @@
 ```python
 # Step 1: Install packages
 !pip install git+https://github.com/BkAsDrP/Softkill9000.git -q
-!pip install --upgrade "numpy>=2.0.0,<2.3.0" -q
+!pip install --upgrade "numpy>=2.0.0,<2.1.0" -q
 
 # Step 2: Restart runtime (Runtime → Restart runtime)
 # Step 3: After restart, verify installation
@@ -127,7 +127,7 @@ The interactive notebook (`examples/run_in_colab.ipynb`) demonstrates:
 ```python
 # Paste this in Colab to verify everything works
 !pip install git+https://github.com/BkAsDrP/Softkill9000.git -q
-!pip install --upgrade "numpy>=2.0.0,<2.3.0" -q
+!pip install --upgrade "numpy>=2.0.0,<2.1.0" -q
 
 # ⚠️ RESTART RUNTIME NOW (Runtime → Restart runtime)
 # Then run the code below after restart:
