@@ -22,19 +22,25 @@ This guide shows you how to run SOFTKILL-9000 in Google Colab to see your change
 Create a new Colab notebook and run:
 
 ```python
-# Install SOFTKILL-9000 from GitHub
+# Step 1: Install SOFTKILL-9000 from GitHub
 !pip install git+https://github.com/BkAsDrP/Softkill9000.git -q
 
-# Upgrade NumPy to resolve dependency conflicts (Colab has older NumPy by default)
-# This fixes conflicts with jax, opencv, pytensor, and thinc
+# Step 2: Upgrade NumPy to resolve dependency conflicts
+# Colab has older NumPy by default; this fixes conflicts with jax, opencv, pytensor, thinc
 !pip install --upgrade "numpy>=2.0.0,<3.0.0" -q
 
-# Verify installation
-import softkill9000
-print(f"✅ SOFTKILL-9000 v{softkill9000.__version__} installed!")
+print("⚠️  IMPORTANT: Click 'Runtime → Restart runtime' to apply NumPy upgrade")
+print("    Then run the verification cell below after restart.")
+```
 
-# Verify NumPy version
+**After restarting the runtime**, run this verification cell:
+
+```python
+# Verify installation (run AFTER runtime restart)
+import softkill9000
 import numpy as np
+
+print(f"✅ SOFTKILL-9000 v{softkill9000.__version__} installed!")
 print(f"✅ NumPy {np.__version__} (compatible with modern ML libraries)")
 ```
 
@@ -200,6 +206,16 @@ The Colab notebook demonstrates:
    ```
 
 ## 🐛 Troubleshooting
+
+### Binary Incompatibility Error After NumPy Upgrade
+If you see `ValueError: numpy.dtype size changed, may indicate binary incompatibility`:
+
+**Solution**: Restart the runtime after upgrading NumPy
+1. Click **Runtime → Restart runtime** in the Colab menu
+2. Re-run your import cells after restart
+3. The error occurs because some packages were compiled against NumPy 1.x
+
+**Why this happens**: When you upgrade NumPy from 1.x to 2.x, packages with compiled extensions (like scipy, pandas, opencv) need the runtime to reload the new NumPy binary. Restarting the runtime ensures all packages use the correct NumPy version.
 
 ### NumPy Dependency Conflicts
 If you see warnings about numpy version conflicts with opencv, jax, pytensor, or thinc:

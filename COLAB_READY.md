@@ -15,10 +15,19 @@
 
 ### One-Line Install (for any Colab notebook)
 ```python
+# Step 1: Install packages
 !pip install git+https://github.com/BkAsDrP/Softkill9000.git -q
-# Upgrade NumPy for compatibility with modern ML libraries
 !pip install --upgrade "numpy>=2.0.0,<3.0.0" -q
+
+# Step 2: Restart runtime (Runtime → Restart runtime)
+# Step 3: After restart, verify installation
+import softkill9000
+import numpy as np
+print(f"✅ SOFTKILL-9000 v{softkill9000.__version__}")
+print(f"✅ NumPy {np.__version__}")
 ```
+
+**⚠️ Important**: You must restart the runtime after upgrading NumPy to avoid binary incompatibility errors.
 
 ---
 
@@ -120,6 +129,9 @@ The interactive notebook (`examples/run_in_colab.ipynb`) demonstrates:
 !pip install git+https://github.com/BkAsDrP/Softkill9000.git -q
 !pip install --upgrade "numpy>=2.0.0,<3.0.0" -q
 
+# ⚠️ RESTART RUNTIME NOW (Runtime → Restart runtime)
+# Then run the code below after restart:
+
 from softkill9000.simulator import MissionSimulator
 from softkill9000.agents.agent import Agent
 from softkill9000.environments.environment import CosmicScenario
@@ -217,6 +229,16 @@ When running on Google Colab:
 ---
 
 ## 🐛 Troubleshooting
+
+### Binary incompatibility error with NumPy
+**Error**: `ValueError: numpy.dtype size changed, may indicate binary incompatibility`
+
+**Solution**: Restart the Colab runtime after upgrading NumPy
+1. Run the installation cells
+2. Click **Runtime → Restart runtime**
+3. Re-import packages and continue
+
+**Why?**: When upgrading NumPy from 1.x to 2.x, compiled packages need the runtime to reload. This is a one-time requirement per session.
 
 ### NumPy dependency conflicts
 If you see warnings about numpy incompatibility with opencv, jax, pytensor, or thinc:
