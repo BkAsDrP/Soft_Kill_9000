@@ -1,0 +1,82 @@
+# Default configuration for SOFTKILL-9000 simulations
+
+mission:
+  num_timesteps: 60
+  ethics_enabled: true
+  # galaxy: null  # Random selection if not specified
+  # planet: null
+  # terrain: null
+  # weather: null
+  # scenario: null
+
+q_learning:
+  episodes: 1000
+  gamma: 0.90
+  alpha: 0.30
+  epsilon: 0.20
+
+# Default squad composition
+agents:
+  - role: "Longsight"
+    species: "Vyr'khai"
+    base_strength: 60
+    base_empathy: 60
+    base_intelligence: 60
+    base_mobility: 60
+    base_tactical: 60
+    
+  - role: "Lifebinder"
+    species: "Lumenari"
+    base_strength: 60
+    base_empathy: 60
+    base_intelligence: 60
+    base_mobility: 60
+    base_tactical: 60
+    
+  - role: "Specter"
+    species: "Zephryl"
+    base_strength: 60
+    base_empathy: 60
+    base_intelligence: 60
+    base_mobility: 60
+    base_tactical: 60
+    
+  - role: "Whisper"
+    species: "Mycelian"
+    base_strength: 60
+    base_empathy: 60
+    base_intelligence: 60
+    base_mobility: 60
+    base_tactical: 60
+    
+  - role: "Archivist"
+    species: "Ferroth"
+    base_strength: 60
+    base_empathy: 60
+    base_intelligence: 60
+    base_mobility: 60
+    base_tactical: 60
+    
+  - role: "Brawler"
+    species: "Aetherborn"
+    base_strength: 60
+    base_empathy: 60
+    base_intelligence: 60
+    base_mobility: 60
+    base_tactical: 60
+    
+  - role: "Armsmaster"
+    species: "Kinetari"
+    base_strength: 60
+    base_empathy: 60
+    base_intelligence: 60
+    base_mobility: 60
+    base_tactical: 60
+    
+  - role: "Explosives Expert"
+    species: "Verdan"
+    base_strength: 60
+    base_empathy: 60
+    base_intelligence: 60
+    base_mobility: 60
+    base_tactical: 60
