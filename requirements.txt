@@ -1,5 +1,7 @@
 # Core dependencies
-numpy>=1.24.0,<2.0.0
+# Use NumPy 2.x to match modern ML libraries (jax, pytensor, thinc) and OpenCV
+# OpenCV pins numpy to <2.3.0 so we allow 2.x but <3.0.0 for safety
+numpy>=2.0.0,<3.0.0
 matplotlib>=3.7.0,<4.0.0
 pydantic>=2.0.0,<3.0.0
 

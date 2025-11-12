@@ -16,6 +16,8 @@
 ### One-Line Install (for any Colab notebook)
 ```python
 !pip install git+https://github.com/BkAsDrP/Softkill9000.git -q
+# Upgrade NumPy for compatibility with modern ML libraries
+!pip install --upgrade "numpy>=2.0.0,<3.0.0" -q
 ```
 
 ---
@@ -116,6 +118,7 @@ The interactive notebook (`examples/run_in_colab.ipynb`) demonstrates:
 ```python
 # Paste this in Colab to verify everything works
 !pip install git+https://github.com/BkAsDrP/Softkill9000.git -q
+!pip install --upgrade "numpy>=2.0.0,<3.0.0" -q
 
 from softkill9000.simulator import MissionSimulator
 from softkill9000.agents.agent import Agent
@@ -214,6 +217,13 @@ When running on Google Colab:
 ---
 
 ## 🐛 Troubleshooting
+
+### NumPy dependency conflicts
+If you see warnings about numpy incompatibility with opencv, jax, pytensor, or thinc:
+```python
+!pip install --upgrade "numpy>=2.0.0,<3.0.0"
+!pip check  # Verify no conflicts remain
+```
 
 ### If installation fails:
 ```python

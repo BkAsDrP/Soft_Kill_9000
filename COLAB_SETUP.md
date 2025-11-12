@@ -25,9 +25,17 @@ Create a new Colab notebook and run:
 # Install SOFTKILL-9000 from GitHub
 !pip install git+https://github.com/BkAsDrP/Softkill9000.git -q
 
+# Upgrade NumPy to resolve dependency conflicts (Colab has older NumPy by default)
+# This fixes conflicts with jax, opencv, pytensor, and thinc
+!pip install --upgrade "numpy>=2.0.0,<3.0.0" -q
+
 # Verify installation
 import softkill9000
-print(f"SOFTKILL-9000 v{softkill9000.__version__} installed!")
+print(f"✅ SOFTKILL-9000 v{softkill9000.__version__} installed!")
+
+# Verify NumPy version
+import numpy as np
+print(f"✅ NumPy {np.__version__} (compatible with modern ML libraries)")
 ```
 
 ## 📋 Step-by-Step Demo
@@ -192,6 +200,16 @@ The Colab notebook demonstrates:
    ```
 
 ## 🐛 Troubleshooting
+
+### NumPy Dependency Conflicts
+If you see warnings about numpy version conflicts with opencv, jax, pytensor, or thinc:
+```python
+# Upgrade to NumPy 2.x (required by modern ML libraries)
+!pip install --upgrade "numpy>=2.0.0,<3.0.0"
+
+# Verify no conflicts remain
+!pip check
+```
 
 ### Installation Issues
 ```python
